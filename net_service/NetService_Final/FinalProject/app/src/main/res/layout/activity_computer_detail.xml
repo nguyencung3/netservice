@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ComputerDetailActivity1">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="COMPUTER DETAIL"
+        android:textAlignment="center"
+        app:titleTextColor="#23A7D8"
+        ></android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.CardView
+        android:layout_gravity="center"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:id="@+id/saleId"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_margin="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="200dp"
+                android:text="COMPUTER #1"
+                android:textColor="#23A7D8"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                />
+            <ImageView
+                android:id="@+id/imgEmpDetail"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/computer_icon_on"
+                android:padding="5dp"/>
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status: "
+                    android:textSize="18sp"
+                    android:textColor="#23A7D8"
+                    />
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtBirthdateEmpDetail"
+                    android:text="Online"
+                    android:textColor="#66FF00"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User : "
+                    android:textSize="18sp"
+                    android:textColor="#23A7D8"
+                    />
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="VuHN"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start time : "
+                    android:textSize="18sp"
+                    android:textColor="#23A7D8"
+                    />
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 10:25 (15-03-2018)"
+                    android:textSize="18sp"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time remaining : "
+                    android:textSize="18sp"
+                    android:textColor="#23A7D8"
+                    />
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5 hours 10 minutes"
+                    android:textSize="18sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Click here to checking web and programing"
+                    android:textSize="13sp"
+                    android:textColor="#FF0000"
+                    android:paddingLeft="15dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                android:layout_gravity="center"
+                >
+                <Button
+                    android:background="@drawable/off"
+                    android:layout_weight="1"
+                    android:layout_margin="15dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    />
+                <Button
+                    android:background="@drawable/restart"
+                    android:layout_weight="1"
+                    android:layout_margin="15dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    />
+                <!--<Button-->
+                    <!--android:background="@drawable/app"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_margin="15dp"-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--/>-->
+                <Button
+                    android:background="@drawable/mess"
+                    android:layout_weight="1"
+                    android:layout_margin="15dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

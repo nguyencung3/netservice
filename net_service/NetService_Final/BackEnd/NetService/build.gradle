@@ -1,0 +1,81 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "http://repo.spring.io/plugins-release" }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}"
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.9"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: "org.springframework.boot"
+apply plugin: "idea"
+
+group 'CVCCompany'
+version '1.0-SNAPSHOT'
+
+jar {
+    baseName = 'netService'
+    version = '0.1.0'
+}
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    //Spring Boot
+    compile("javax.servlet:javax.servlet-api:${servlet_api_version}")
+    compile("org.springframework.boot:spring-boot-starter-web:1.3.0.RELEASE")
+    compile "org.projectlombok:lombok:1.16.4"
+
+    //Swagger Ui
+    compile("io.springfox:springfox-swagger2:${springfox_version}")
+    compile("io.springfox:springfox-swagger-ui:${springfox_version}")
+
+    //Database
+    compile("org.springframework.boot:spring-boot-starter-data-jpa") {
+        exclude(module: "hibernate-core")
+        exclude(module: "hibernate-entitymanager")
+    }
+    compile("org.hibernate:hibernate-core:${hibernate_version}")
+    compile("mysql:mysql-connector-java")
+    compile("org.hibernate:hibernate-entitymanager:${hibernate_version}")
+
+    testCompile group: "junit", name: "junit", version: "4.+"
+    testCompile "org.springframework.boot:spring-boot-starter-test:1.3.0.RELEASE"
+
+    compile "com.google.guava:guava:17.0"
+    compile "org.projectlombok:lombok:1.16.4"
+    testCompile "com.h2database:h2"
+
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0")
+
+    //Redis Cache
+//    compile group: 'org.springframework.session', name: 'spring-session-data-redis', version: '1.3.1.RELEASE'
+//    compile group: 'org.springframework.data', name: 'spring-data-redis', version: '1.8.9.RELEASE'
+//    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
+//    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+//    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
+
+//for mapper
+apply plugin: "net.ltgt.apt"
+dependencies {
+    apt "org.mapstruct:mapstruct-processor:1.1.0.Final"
+}
+
+

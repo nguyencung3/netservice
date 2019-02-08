@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ComputerActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarComputer"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#daf3fc"
+        app:title="COMPUTER FEE DETAIL"
+        app:titleTextColor="#23A7D8"></android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#daf3fc"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="4.5"
+            android:background="@drawable/fee_detail"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1.5"
+                android:text="From"
+
+                android:textColor="#23A7D8" />
+
+            <TextView
+
+                android:id="@+id/txtFromComputer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="2.5"
+                android:text="29/05/2018" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="4.5"
+            android:background="@drawable/fee_detail"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="To"
+                android:textColor="#23A7D8" />
+
+            <TextView
+                android:id="@+id/txtToComputer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="3"
+                android:text="29/05/2018"
+
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnFilterCombyDate"
+            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/right"
+            >
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#daf3fc"
+        android:orientation="horizontal"
+        android:weightSum="10"
+
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/t" />
+
+        <TextView
+            android:id="@+id/txtTotalRevenueComputer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="123,000 VNĐ"
+            android:textColor="#23A7D8"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/searchCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Customer" />
+
+    <ListView
+        android:id="@+id/listViewComFeeDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"></ListView>
+</LinearLayout>
