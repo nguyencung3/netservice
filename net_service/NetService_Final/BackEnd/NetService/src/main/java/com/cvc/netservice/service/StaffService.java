@@ -9,4 +9,6 @@ public interface StaffService {
     List<StaffDTO> getListEmployee();
 
     StaffDTO update(Long id, String key, Object value);
+
+    Long createEmployee(StaffDTO staffDTO);
 }

@@ -12,4 +12,6 @@ public interface InventoryService {
 
     GoodsDTO updateGooods(String field, Object value, Long id) throws Exception;
 
+    GoodsDTO deleteGoods(Long id);
+
 }

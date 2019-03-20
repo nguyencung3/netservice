@@ -31,6 +31,13 @@ public class StaffServiceImpl implements StaffService {
     }
 
     @Override
+    public Long createEmployee(StaffDTO staffDTO) {
+        Staff staff = staffMapper.toEntity(staffDTO);
+        staffRepository.save(staff);
+        return staffRepository.findFirstByOrderByIdDesc().getId();
+    }
+
+    @Override
     public List<StaffDTO> getListEmployee() {
         return staffRepository.findAll().stream()
                 .map(staffMapper::toStaffDTO)

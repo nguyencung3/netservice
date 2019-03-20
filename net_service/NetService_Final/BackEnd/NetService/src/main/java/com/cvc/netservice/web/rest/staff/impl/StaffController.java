@@ -28,4 +28,15 @@ public class StaffController implements StaffApi {
         StaffDTO staffDTO = staffService.update(id, data.getKey(), data.getValue());
         return ResponseEntity.ok(staffDTO);
     }
+
+    @Override
+    public ResponseEntity<Long> createEmployee(StaffDTO staffDTO) {
+        Long id;
+        try {
+            id = staffService.createEmployee(staffDTO);
+        } catch (Exception e) {
+            id = null;
+        }
+        return ResponseEntity.ok(id);
+    }
 }

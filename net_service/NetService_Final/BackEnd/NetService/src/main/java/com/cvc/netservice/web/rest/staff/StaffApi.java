@@ -19,4 +19,8 @@ public interface StaffApi {
     @ApiOperation(value = "CHANGE PASSWORD", notes = "", response = StaffDTO.class, tags = {"STAFF",})
     @PutMapping("update/{id}")
     ResponseEntity<StaffDTO> updateProfile(@PathVariable(value = "id", required = true) Long id, @RequestBody UpdateData data);
+
+    @ApiOperation(value = "Create employee return ID", notes = "", response = Long.class, tags = {"EMPLOYEE",})
+    @PostMapping("/create")
+    ResponseEntity<Long> createEmployee(@RequestBody StaffDTO staffDTO);
 }

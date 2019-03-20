@@ -14,6 +14,9 @@ public class Goods implements Serializable {
     @Column(name = "good_name")
     private String goodName;
 
+    @Column(name = "description")
+    private String description;
+
     @Column(name = "cost_price")
     private Double costPrice;
 
@@ -21,7 +24,7 @@ public class Goods implements Serializable {
     private String nameUnit;
 
     @Column(name = "basic_unit_id")
-    private String basicUnitId;
+    private Long basicUnitId;
 
     @Column(name = "exchange_value")
     private Long exchangeValue;
@@ -31,6 +34,9 @@ public class Goods implements Serializable {
 
     @Column(name = "status")
     private String status;
+
+    @Column(name = "is_remove")
+    private Boolean remove;
 
     public Long getId() {
         return id;
@@ -64,11 +70,11 @@ public class Goods implements Serializable {
         this.nameUnit = nameUnit;
     }
 
-    public String getBasicUnitId() {
+    public Long getBasicUnitId() {
         return basicUnitId;
     }
 
-    public void setBasicUnitId(String basicUnitId) {
+    public void setBasicUnitId(Long basicUnitId) {
         this.basicUnitId = basicUnitId;
     }
 
@@ -94,5 +100,21 @@ public class Goods implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Boolean getRemove() {
+        return remove;
+    }
+
+    public void setRemove(Boolean remove) {
+        this.remove = remove;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

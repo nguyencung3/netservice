@@ -22,7 +22,11 @@ public interface InventoryApi {
     ResponseEntity<Long> create(@RequestBody GoodsDTO goodsDTO);
 
     @ApiOperation(value = "Update goods", notes = "", response = GoodsDTO.class, tags = {"INVENTORY",})
-    @PutMapping("/update/{id}")
-    ResponseEntity<GoodsDTO> update(@PathVariable("id") Long id, @RequestBody UpdateData data);
+    @PutMapping("/update")
+    ResponseEntity<GoodsDTO> update(@RequestBody UpdateData data);
+
+    @ApiOperation(value = "Delete type goods", notes = "", response = GoodsDTO.class, tags = {"INVENTORY",})
+    @PutMapping("/delete-goods")
+    ResponseEntity<GoodsDTO> delete(@RequestParam Long id);
 
 }

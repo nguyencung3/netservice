@@ -38,6 +38,7 @@ public class InventoryServiceImpl implements InventoryService {
     @Override
     public Long createGoods(GoodsDTO goodsDTO) {
         Goods goods = goodsMapper.toEntity(goodsDTO);
+        goods.setRemove(false);
         inventoryRepository.save(goods);
         return inventoryRepository.findFirstByOrderByIdDesc().getId();
     }
@@ -53,6 +54,17 @@ public class InventoryServiceImpl implements InventoryService {
 
         //Save
         inventoryRepository.save(goods);
+        return goodsMapper.toGoodsDTO(goods);
+    }
+
+    @Override
+    public GoodsDTO deleteGoods(Long id) {
+        Goods goods = Optional.ofNullable(inventoryRepository.findOne(id))
+                .orElseThrow(EntityNotFoundException::new);
+
+        goods.setRemove(true);
+        inventoryRepository.save(goods);
+
         return goodsMapper.toGoodsDTO(goods);
     }
 }

@@ -4,6 +4,8 @@ import javax.validation.constraints.NotNull;
 
 public class UpdateData {
 
+    private Long id;
+
     @NotNull
     private String key = null;
 
@@ -23,5 +25,13 @@ public class UpdateData {
 
     public void setValue(Object value) {
         this.value = value;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

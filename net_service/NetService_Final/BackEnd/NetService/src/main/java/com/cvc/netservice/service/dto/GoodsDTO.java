@@ -8,17 +8,21 @@ public class GoodsDTO implements Serializable {
 
     private String goodName;
 
+    private String description;
+
     private Double costPrice;
 
     private String nameUnit;
 
-    private String basicUnitId;
+    private Long basicUnitId;
 
     private Long exchangeValue;
 
     private String quantityInStock;
 
     private String status;
+
+    private Boolean remove;
 
     public Long getId() {
         return id;
@@ -52,11 +56,11 @@ public class GoodsDTO implements Serializable {
         this.nameUnit = nameUnit;
     }
 
-    public String getBasicUnitId() {
+    public Long getBasicUnitId() {
         return basicUnitId;
     }
 
-    public void setBasicUnitId(String basicUnitId) {
+    public void setBasicUnitId(Long basicUnitId) {
         this.basicUnitId = basicUnitId;
     }
 
@@ -82,5 +86,21 @@ public class GoodsDTO implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Boolean getRemove() {
+        return remove;
+    }
+
+    public void setRemove(Boolean remove) {
+        this.remove = remove;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

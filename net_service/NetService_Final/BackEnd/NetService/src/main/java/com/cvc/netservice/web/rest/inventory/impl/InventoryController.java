@@ -7,6 +7,7 @@ import com.cvc.netservice.web.rest.inventory.InventoryApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class InventoryController implements InventoryApi {
     }
 
     @Override
-    public ResponseEntity<Long> create(GoodsDTO goodsDTO) {
+    public ResponseEntity<Long> create(@RequestBody GoodsDTO goodsDTO) {
         Long id;
         try {
             id = inventoryService.createGoods(goodsDTO);
@@ -35,10 +36,21 @@ public class InventoryController implements InventoryApi {
     }
 
     @Override
-    public ResponseEntity<GoodsDTO> update(Long id, UpdateData data) {
+    public ResponseEntity<GoodsDTO> update(@RequestBody UpdateData data) {
         GoodsDTO goodsDTO;
         try {
-            goodsDTO = inventoryService.updateGooods(data.getKey(), data.getValue(), id);
+            goodsDTO = inventoryService.updateGooods(data.getKey(), data.getValue(), data.getId());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return ResponseEntity.ok(goodsDTO);
+    }
+
+    @Override
+    public ResponseEntity<GoodsDTO> delete(Long id) {
+        GoodsDTO goodsDTO;
+        try {
+            goodsDTO = inventoryService.deleteGoods(id);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
