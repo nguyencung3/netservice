@@ -15,8 +15,8 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:mysql://localhost:3306/net_service_full?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://35.185.187.45:3306/net_service?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
-    password: Nga1409@
+    password: oem1qazxsw2
 
   session:

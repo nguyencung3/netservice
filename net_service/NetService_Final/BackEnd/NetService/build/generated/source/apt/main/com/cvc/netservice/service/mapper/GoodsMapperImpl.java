@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-07-23T15:37:07+0700",
-    comments = "version: 1.1.0.Final, compiler: javac, environment: Java 1.8.0_171 (Oracle Corporation)"
+    date = "2019-03-20T21:27:45+0700",
+    comments = "version: 1.1.0.Final, compiler: javac, environment: Java 1.8.0_92 (Oracle Corporation)"
 )
 @Component
 public class GoodsMapperImpl implements GoodsMapper {
@@ -29,6 +29,8 @@ public class GoodsMapperImpl implements GoodsMapper {
         goodsDTO.setExchangeValue( entity.getExchangeValue() );
         goodsDTO.setQuantityInStock( entity.getQuantityInStock() );
         goodsDTO.setStatus( entity.getStatus() );
+        goodsDTO.setRemove( entity.getRemove() );
+        goodsDTO.setDescription( entity.getDescription() );
 
         return goodsDTO;
     }
@@ -49,6 +51,8 @@ public class GoodsMapperImpl implements GoodsMapper {
         goods.setExchangeValue( dto.getExchangeValue() );
         goods.setQuantityInStock( dto.getQuantityInStock() );
         goods.setStatus( dto.getStatus() );
+        goods.setRemove( dto.getRemove() );
+        goods.setDescription( dto.getDescription() );
 
         return goods;
     }
